@@ -11,5 +11,6 @@ struct queue *front, *rear;
 int enqueue(int a);
 int dequeue();
 int IsEmpty();
+void show();
 
 #endif

@@ -16,23 +16,17 @@ int enqueue(int a)
 		new_queue->var = a;
 
 		if (rear != NULL)
-		{
 			rear->next = new_queue;
-			rear = new_queue;
-		}
-		else
-			rear = new_queue;
+
+		rear = new_queue;
 
 		if (front == NULL)
 			front = new_queue;
-		
 
-		return 1;
+		return 0;
 	}
 	else
-		return 0;
-
-
+		return 1;
 
 }
 
@@ -70,3 +64,19 @@ int IsEmpty()
 		return 0;
 }
 
+void show()
+{
+	struct queue *temp = NULL;
+
+	if ( !IsEmpty())
+	{
+		while (front)
+		{
+			temp = front;
+			front = front->next;
+			printf("data = %d\t", temp->var);
+		}
+	}
+	else
+		printf("Queue is empty\n");
+}
